@@ -78,6 +78,7 @@
 
   <PropertyGroup>
     <NupkgFilePath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)$(OutDir)$(NuGetPackageId).$(NuGetVersion).nupkg'))</NupkgFilePath>
+    <UserSecretsId>2d0f8d16-349d-40ef-85a1-a2277a349329</UserSecretsId>
   </PropertyGroup>
   <Target Name="BuildNuGet" AfterTargets="CoreBuild" Condition="Exists('$(NuSpecFile)')" DependsOnTargets="CopyFilesToOutputDirectory" Inputs="@(NuGetInput)" Outputs="$(NupkgFilePath)">
     <PropertyGroup>

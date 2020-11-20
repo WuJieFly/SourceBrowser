@@ -72,7 +72,7 @@ namespace Microsoft.SourceBrowser.HtmlGenerator
         public void AddFederation(string server)
         {
             var url = GetAssemblyUrl(server);
-
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var assemblyList = new WebClient().DownloadString(url);
             var assemblyNames = GetAssemblyNames(assemblyList);
 
