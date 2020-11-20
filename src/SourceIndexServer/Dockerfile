@@ -18,5 +18,6 @@ RUN dotnet publish "SourceIndexServer.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
+VOLUME /app/index
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Microsoft.SourceBrowser.SourceIndexServer.dll"]
